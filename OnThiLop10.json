@@ -2,59 +2,53 @@
     {
         "id":"hanoi",
         "name":"Hà Nội",
-        "Toan":
-            {
-                "title" : "Ha noi Hướng dẫn giải đề thi toán lớp 10 năm 2021",
-                "link" : "https://drive.google.com/uc?export=download&id=1Y-fQfkJxNDVSvqbKrHsCX4kYJzZ3LpSB"
-            }, 
-        "Van":
-            {
-                 "title" : " Hà nội Hướng dẫn giải đề thi toán lớp 10 năm 2021 - Github",
-                "link" : "https://hungnttg.github.io/DeToan2021.pdf"
-            },
-        "Anh":
-        {
-            "title" : "pqr",
-            "link" : "str"
-        }
+        "year":"2021",
+        "title_DeThiToan" : "Hà nội đề toán",
+        "link_DeThiToan" : "https://drive.google.com/uc?export=download&id=1Y-fQfkJxNDVSvqbKrHsCX4kYJzZ3LpSB",
+        "title_DeThiVan" : "pqr",
+        "link_DeThiVan" : "str",
+        "title_DeThiAnh" : "pqr",
+        "link_DeThiAnh" : "str",
+        "title_GiaiDeThiToan":"ssd",
+        "link_GiaiDeThiToan":"ssd",  
+        "title_GiaiDeThiVan":"ssd",
+        "link_GiaiDeThiVan":"ssd", 
+        "title_GiaiDeThiAnh":"ssd",
+        "link_GiaiDeThiAnh":"ssd"
     },
     {
         "id":"caobang",
         "name":"Cao Bằng",
-        "Toan":
-            {
-                "title" : "Cao bang Hướng dẫn giải đề thi toán lớp 10 năm 2021",
-                "link" : "https://drive.google.com/uc?export=download&id=1Y-fQfkJxNDVSvqbKrHsCX4kYJzZ3LpSB"
-            }, 
-        "Van":
-            {
-                "title" : "Cao bằng Hướng dẫn giải đề thi toán lớp 10 năm 2021 - Github",
-                "link" : "https://hungnttg.github.io/DeToan2021.pdf"
-            },
-        "Anh":
-        {
-            "title" : "pqr",
-            "link" : "str"
-        }
+        "year":"2021",
+        "title_DeThiToan" : "Cao bằng đề toán",
+        "link_DeThiToan" : "https://drive.google.com/uc?export=download&id=1Y-fQfkJxNDVSvqbKrHsCX4kYJzZ3LpSB",
+        "title_DeThiVan" : "pqr",
+        "link_DeThiVan" : "str",
+        "title_DeThiAnh" : "pqr",
+        "link_DeThiAnh" : "str",
+        "title_GiaiDeThiToan":"ssd",
+        "link_GiaiDeThiToan":"ssd",  
+        "title_GiaiDeThiVan":"ssd",
+        "link_GiaiDeThiVan":"ssd", 
+        "title_GiaiDeThiAnh":"ssd",
+        "link_GiaiDeThiAnh":"ssd"    
     },
     {
         "id":"tuyenquang",
         "name":"Tuyên Quang",
-        "Toan":
-            {
-                "title" : "Tuyen quang Hướng dẫn giải đề thi toán lớp 10 năm 2021",
-                "link" : "https://drive.google.com/uc?export=download&id=1Y-fQfkJxNDVSvqbKrHsCX4kYJzZ3LpSB"
-            }, 
-        "Van":
-            {
-                 "title" : "Tuyên quang Hướng dẫn giải đề thi toán lớp 10 năm 2021 - Github",
-             "link" : "https://hungnttg.github.io/DeToan2021.pdf"
-            },
-        "Anh":
-        {
-            "title" : "pqr",
-            "link" : "str"
-        }
+        "year":"2021",
+        "title_DeThiToan" : "Tuyên quang đề toán",
+        "link_DeThiToan" : "https://drive.google.com/uc?export=download&id=1Y-fQfkJxNDVSvqbKrHsCX4kYJzZ3LpSB",
+        "title_DeThiVan" : "pqr",
+        "link_DeThiVan" : "str",
+        "title_DeThiAnh" : "pqr",
+        "link_DeThiAnh" : "str",
+        "title_GiaiDeThiToan":"ssd",
+        "link_GiaiDeThiToan":"ssd",  
+        "title_GiaiDeThiVan":"ssd",
+        "link_GiaiDeThiVan":"ssd", 
+        "title_GiaiDeThiAnh":"ssd",
+        "link_GiaiDeThiAnh":"ssd"    
     }
     
 ]
