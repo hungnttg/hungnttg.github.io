@@ -1,6 +1,6 @@
 [ 
     {
-        "id":"hanoi",
+        "id":"1",
         "name":"Hà Nội",
         "year":"2021",
         "title_DeThiToan" : "Hà nội đề toán",
@@ -17,7 +17,7 @@
         "link_GiaiDeThiAnh":"ssd"
     },
     {
-        "id":"caobang",
+        "id":"2",
         "name":"Cao Bằng",
         "year":"2021",
         "title_DeThiToan" : "Cao bằng đề toán",
@@ -34,7 +34,7 @@
         "link_GiaiDeThiAnh":"ssd"    
     },
     {
-        "id":"tuyenquang",
+        "id":"3",
         "name":"Tuyên Quang",
         "year":"2021",
         "title_DeThiToan" : "Tuyên quang đề toán",
