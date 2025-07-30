@@ -1,19 +1,699 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ielts 4 doctor - Mobile Game Developer</title>
+    <meta name="description" content="We enhance your experience with the best games and apps. Discover Candy Match: Puzzle Game and more exciting mobile games.">
+    <meta name="keywords" content="mobile games, puzzle games, match-3, android games, candy match, game developer, ielts 4 doctor">
+    <meta name="author" content="ielts 4 doctor">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hungnttg.github.io/">
+    <meta property="og:title" content="ielts 4 doctor - Mobile Game Developer">
+    <meta property="og:description" content="We enhance your experience with the best games and apps.">
+    <meta property="og:image" content="https://hungnttg.github.io/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hungnttg.github.io/">
+    <meta property="twitter:title" content="ielts 4 doctor - Mobile Game Developer">
+    <meta property="twitter:description" content="We enhance your experience with the best games and apps.">
+    <meta property="twitter:image" content="https://hungnttg.github.io/images/og-image.jpg">
+
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        iframe {
-            display: block;
-            border: none;
-            height: 100vh;
-            width: 100vw;
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Featured App Section */
+        .featured-app {
+            background: white;
+            padding: 80px 0;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .app-info h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .app-info p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .app-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .app-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .app-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .app-image {
+            text-align: center;
+        }
+
+        .app-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #667eea;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff6b6b;
+        }
+
+        .copyright {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .app-info h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* App Store Badges */
+        .store-badges {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .store-badge {
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        /* Coming Soon Badge */
+        .coming-soon {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Developer Info */
+        .developer-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 0;
+            color: white;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 20px;
+        }
+
+        .developer-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .developer-info p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .official-website {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .official-website:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        /* All Apps & Games Section */
+        .all-apps {
+            background: #f9f9f9;
+            padding: 80px 0;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .all-apps h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .all-apps p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: white;
+        }
+
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .app-card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .app-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .app-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-link:hover {
+            background: linear-gradient(45deg, #764ba2, #667eea);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <iframe src="https://dartpad.dev/embed-dart.html?theme=light"></iframe>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">ielts 4 doctor</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="fade-in">Welcome to ielts 4 doctor</h1>
+            <p class="fade-in">We enhance your experience with the best games and apps.</p>
+            <a href="#games" class="cta-button fade-in">Discover Our Games</a>
+        </div>
+    </section>
+
+    <!-- Developer Info Section -->
+    <section class="developer-info">
+        <div class="container">
+            <h3 class="fade-in">Official Developer</h3>
+            <p class="fade-in">ielts 4 doctor is a registered Google Play Developer with multiple successful apps</p>
+            <a href="https://huongdanhoc.com/" target="_blank" class="official-website fade-in">
+                🌐 Visit Official Website
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured App Section -->
+    <section id="games" class="featured-app">
+        <div class="container">
+            <div class="app-grid">
+                <div class="app-info fade-in">
+                    <h2>Candy Match: Puzzle Game</h2>
+                    <p>Experience the sweetest puzzle adventure with 200 challenging levels! Match colorful candies, create spectacular combos, and unlock special power-ups in this addictive match-3 puzzle game.</p>
+                    
+                    <ul class="app-features">
+                        <li>200 challenging levels with increasing difficulty</li>
+                        <li>Beautiful candy-themed graphics and animations</li>
+                        <li>Special power-ups and combo effects</li>
+                        <li>Multiple game modes and challenges</li>
+                        <li>Optimized for all Android devices</li>
+                        <li>Free to play with optional ads</li>
+                    </ul>
+
+                    <div class="coming-soon">
+                        🚀 Coming Soon to Google Play Store
+                    </div>
+                </div>
+                
+                <div class="app-image fade-in">
+                    <img src="https://via.placeholder.com/400x600/667eea/ffffff?text=Candy+Match+Game" 
+                         alt="Candy Match: Puzzle Game Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Apps & Games Section -->
+    <section class="all-apps">
+        <div class="container">
+            <h2 class="fade-in">Our Apps & Games Collection</h2>
+            <p class="fade-in">Discover our complete portfolio of mobile apps and games available on Google Play Store</p>
+            
+            <div class="apps-grid">
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <img src="https://play-lh.googleusercontent.com/3p894Xutp57qkpoPuDkBiYAOdWGPMvoSaWcftCCqW1fk0eKolf9CNz2NbsweZDecYoW4JMOF9upBG7UjS9Ye2Q=s256" alt="Candy Match">
+                    </div>
+                    <h3>Candy Match: Puzzle Game</h3>
+                    <p>Match-3 puzzle game with 200 sweet levels</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.hnq.candymatch.puzzle" target="_blank" class="app-link">View on Google Play</a>
+                </div>
+
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <img src="https://play-lh.googleusercontent.com/ww9AQAKzp5W3KTl0Wd5jzISLqEmoH7LK5k5J-YkHw_9Gh8ymhCkJF2vGDHPPKgL9TB6B=s256" alt="Xem Ngày Cưới">
+                    </div>
+                    <h3>Xem Ngày Cưới</h3>
+                    <p>Vietnamese wedding date calculator and planner</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.hungnq40.xemngaycuoi" target="_blank" class="app-link">View on Google Play</a>
+                </div>
+
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <img src="https://play-lh.googleusercontent.com/yBz6qYwvIk3EOixBGIXoa3AKFrtfFKyFa-_1wxo8Pber1lb-sKvYoHU27aKNiJ2rU6M=s256" alt="LightBeam">
+                    </div>
+                    <h3>LightBeam - Smart Flashlight</h3>
+                    <p>Smart flashlight with strobe and SOS features</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.hnq.flashlight.lightbeam" target="_blank" class="app-link">View on Google Play</a>
+                </div>
+
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <img src="https://play-lh.googleusercontent.com/BLmmaedVjYX3zRKLnjjQibOUSr38obFTkrGtyjtaueMwNUgGMc_rpJzG53sxI3BWdHY=s256" alt="Super Adventure">
+                    </div>
+                    <h3>Super Adventure World</h3>
+                    <p>Classic 2D platformer with infinite replayability</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.hnq.superadventure.world" target="_blank" class="app-link">View on Google Play</a>
+                </div>
+
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <img src="https://play-lh.googleusercontent.com/GoYHl33Tw63A8RIs_HlzXAl9GqagOf35sUbjrbhDa7fEwEaZ-DTSO3dJMCIz-_GIncM=s256" alt="Block Puzzle">
+                    </div>
+                    <h3>Block Puzzle Crush</h3>
+                    <p>Classic block puzzle game with multiple modes</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.block.tetris.crush.blast" target="_blank" class="app-link">View on Google Play</a>
+                </div>
+
+                <div class="app-card fade-in">
+                    <div class="app-icon">
+                        <img src="https://via.placeholder.com/80x80/dda0dd/ffffff?text=📅" alt="Lịch Âm">
+                    </div>
+                    <h3>Lịch Âm Hôm Nay</h3>
+                    <p>Vietnamese lunar calendar and daily horoscope</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.hungnq40.lichamhomnay" target="_blank" class="app-link">View on Google Play</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="fade-in">About ielts 4 doctor</h2>
+            <p class="fade-in">
+                We are passionate mobile game developers dedicated to creating engaging and entertaining experiences for players worldwide. 
+                Our mission is to develop high-quality games that bring joy and challenge to millions of users.
+                With a focus on user experience and innovative gameplay mechanics, we strive to deliver the best gaming experience possible.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ielts 4 doctor</h3>
+                    <p>We enhance your experience with the best games and apps.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/hungnttg" title="GitHub" target="_blank">🐙</a>
+                        <a href="https://huongdanhoc.com/" title="Official Website" target="_blank">🌐</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Apps & Games</h3>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.hnq.candymatch.puzzle" target="_blank">Candy Match: Puzzle Game</a></p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.hungnq40.xemngaycuoi" target="_blank">Xem Ngày Cưới</a></p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.hnq.flashlight.lightbeam" target="_blank">LightBeam - Smart Flashlight</a></p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.hnq.superadventure.world" target="_blank">Super Adventure World</a></p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.block.tetris.crush.blast" target="_blank">Block Puzzle Crush</a></p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.hungnq40.lichamhomnay" target="_blank">Lịch Âm Hôm Nay</a></p>
+                    <p>More apps and games coming soon...</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Official Website: <a href="https://huongdanhoc.com/" target="_blank">huongdanhoc.com</a></p>
+                    <p>GitHub: <a href="https://github.com/hungnttg" target="_blank">github.com/hungnttg</a></p>
+                    <p>Portfolio: <a href="https://hungnttg.github.io">hungnttg.github.io</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <p><a href="/privacy-policy">Privacy Policy</a></p>
+                    <p><a href="/terms-of-service">Terms of Service</a></p>
+                    <p><a href="https://play.google.com/store/apps/dev?id=9151207034783061631" target="_blank">Google Play Developer Page</a></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 ielts 4 doctor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
 </body>
-</html>
+</html> 
